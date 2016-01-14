@@ -1,0 +1,83 @@
+@import 'setup';
+
+$roboto: 'Roboto Mono';
+
+$light: #e5eec1;
+$medium: #9EBA99;
+$blue: #3eaca8;
+$grey: #27343A;
+
+html{
+	font-size: 62.5%;
+}
+
+body{
+	background: $grey;
+}
+
+
+//typography typography typography typography typography typography
+
+h1{
+	font-family: $roboto;
+	font-weight: 100;
+	font-size: 64px;
+	color: $light;
+	line-height: 84px;
+	margin: 0;
+}
+
+h2{
+	font-family: $roboto;
+	font-weight: 300;
+	font-style: italic;
+	font-size: 14px;
+	color: $light;
+	letter-spacing: 0.58px;
+	line-height: 21px;
+	margin: 0 0 0 1rem;
+}
+
+//general styles general styles general styles general styles general styles
+
+.wrapper{
+	max-width: 960px;
+	margin: 0 auto;
+	padding: 0 1rem;
+}
+
+.flex{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.ralien{
+	img{
+		height: 80px;
+	}
+}
+
+//inputs inputs inputs inputs inputs inputs inputs inputs inputs inputs
+
+input{
+	background: $medium;
+	border: none;
+	border-radius: 0;
+}
+
+//header header header header header header header header header header
+
+header{
+	padding-top: 2rem;
+	margin-bottom: 4rem;
+	.wrapper{
+		justify-content: space-between;
+		align-items: center;
+	}
+}
+
+//section.select section.select section.select section.select
+
+section.select{
+//	margin: 0;
+}
