@@ -9,6 +9,7 @@
 </head>
 <body>
 
+<!--header-->
 	<header>
 		<div class="wrapper flex">
 			<div class="title">
@@ -20,18 +21,24 @@
 			</div>
 		</div>
 	</header>
+<!--	/header-->
 	
+<!--	section.select-->
 	<section class="select">
-		<div class="options wrapper">
+		<div class="options wrapper flex">
+		
 			<input type="number" value="1">
-			<radiogroup>
-				<radio value="words" label="words" selected/>
-				<radio value="sentences" label="sentences"/>
-				<radio value="paragraphs" label="paragraphs"/>
-			</radiogroup>
+			<input type="radio" value="words" id="words" label="words" selected>
+			<label for="words">words</label>
+			<input type="radio" value="sentences" id="sentences" label="sentences">
+			<label for="sentences">sentences</label>
+			<input type="radio" value="paragraphs" id="paragraphs" label="paragraphs">
+			<label for="paragraphs">paragraphs</label>
+			
 			
 		</div>
 	</section>
+<!--	/section.select-->
 
 </body>
 </html>

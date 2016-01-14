@@ -13,6 +13,7 @@ html{
 
 body{
 	background: $grey;
+	font-family: $roboto;
 }
 
 
@@ -21,21 +22,21 @@ body{
 h1{
 	font-family: $roboto;
 	font-weight: 100;
-	font-size: 64px;
+	font-size: 6.4rem;
 	color: $light;
-	line-height: 84px;
-	margin: 0;
+	line-height: 8.4rem;
+	margin: 0 0 0 -1rem;
 }
 
 h2{
 	font-family: $roboto;
 	font-weight: 300;
 	font-style: italic;
-	font-size: 14px;
+	font-size: 1.4rem;
 	color: $light;
 	letter-spacing: 0.58px;
 	line-height: 21px;
-	margin: 0 0 0 1rem;
+	margin: 0;
 }
 
 //general styles general styles general styles general styles general styles
@@ -62,14 +63,29 @@ h2{
 input{
 	background: $medium;
 	border: none;
-	border-radius: 0;
+}
+
+input[type=number]{
+	color: black;
+	width: 4rem;
+}
+
+label{
+	color: $light;
+	margin-left: .5rem;
+	font-size: 1.4rem;
+	font-weight: 300;
+}
+
+input[type=number], label{
+	margin-right: 2rem;	
 }
 
 //header header header header header header header header header header
 
 header{
 	padding-top: 2rem;
-	margin-bottom: 4rem;
+	margin-bottom: 2rem;
 	.wrapper{
 		justify-content: space-between;
 		align-items: center;
@@ -79,5 +95,7 @@ header{
 //section.select section.select section.select section.select
 
 section.select{
-//	margin: 0;
+	.options{
+		align-items: center;
+	}
 }
