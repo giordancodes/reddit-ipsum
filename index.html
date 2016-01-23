@@ -13,7 +13,7 @@
 	<header>
 		<div class="wrapper flex">
 			<div class="title">
-				<h1>reddit ipsum</h1>
+				<h1><a href="index.html">reddit ipsum</a></h1>
 				<h2>dank filler text</h2>
 			</div>
 			<div class="ralien">
@@ -25,16 +25,19 @@
 	
 <!--	section.select-->
 	<section class="select">
-		<div class="options wrapper flex">
+		<div class="options wrapper">
 		
-			<input type="number" value="1">
-			<input type="radio" value="words" id="words" label="words" selected>
-			<label for="words">words</label>
-			<input type="radio" value="sentences" id="sentences" label="sentences">
-			<label for="sentences">sentences</label>
-			<input type="radio" value="paragraphs" id="paragraphs" label="paragraphs">
-			<label for="paragraphs">paragraphs</label>
-			
+			<form class="flex" action="">
+				<input type="number" value="1">
+				<input type="radio" name="length" value="words" id="words" label="words" selected>
+				<label for="words">words</label>
+				<input type="radio" name="length" value="sentences" id="sentences" label="sentences">
+				<label for="sentences">sentences</label>
+				<input type="radio" name="length" value="paragraphs" id="paragraphs" label="paragraphs">
+				<label for="paragraphs">paragraphs</label>
+				<input type="checkbox" value="nsfw" id="nsfw">
+				<label for="nsfw">NSFW</label>
+			</form>
 			
 		</div>
 	</section>

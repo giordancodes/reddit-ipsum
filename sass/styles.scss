@@ -16,6 +16,16 @@ body{
 	font-family: $roboto;
 }
 
+//links links links links links links links links links links links links
+
+a{
+	color: $light;
+	text-decoration: none;
+	transition: color .6s;
+	&:hover{
+		color: $blue;
+	}
+}
 
 //typography typography typography typography typography typography
 
@@ -44,7 +54,7 @@ h2{
 .wrapper{
 	max-width: 960px;
 	margin: 0 auto;
-	padding: 0 1rem;
+	padding: 0 2rem;
 }
 
 .flex{
@@ -58,6 +68,10 @@ h2{
 	}
 }
 
+section{
+	padding-top: 1rem;
+}
+
 //inputs inputs inputs inputs inputs inputs inputs inputs inputs inputs
 
 input{
@@ -68,6 +82,9 @@ input{
 input[type=number]{
 	color: black;
 	width: 4rem;
+	padding: .5rem;
+	border-radius: .2rem;
+	font-size: 1.6rem;
 }
 
 label{
@@ -78,7 +95,17 @@ label{
 }
 
 input[type=number], label{
-	margin-right: 2rem;	
+	margin-right: 1.5rem;	
+}
+
+input[type=checkbox] + label{
+	border: solid 1px rgba(0,0,0,0);
+	padding: .1rem .3rem;
+}
+
+input[type=checkbox]:checked + label{
+	color: red;
+	border-color: red;
 }
 
 //header header header header header header header header header header
@@ -95,7 +122,7 @@ header{
 //section.select section.select section.select section.select
 
 section.select{
-	.options{
+	.options form{
 		align-items: center;
 	}
 }
