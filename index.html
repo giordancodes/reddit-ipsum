@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Reddit Ipsum</title>
+	<title>reddit ipsum</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,300italic,100' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,300italic,300,100' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.0.2/css/hover-min.css">
 	<link rel="stylesheet" href="styles.css">
 </head>
@@ -28,7 +28,7 @@
 	<section class="select">
 		<div class="options wrapper">
 		
-			<form class="flex" action="">
+			<form class="flex">
 				<input type="number" value="1">
 				<input type="radio" name="length" value="words" id="words" label="words" selected>
 				<label for="words">words</label>
@@ -39,7 +39,7 @@
 				<input type="checkbox" value="nsfw" id="nsfw">
 				<label for="nsfw">NSFW</label>
 				<div class="button">
-					<button action="submit">go</button>
+					<button action="submit" id="goBtn">> generate <</button>
 				</div>
 			</form>
 			
@@ -47,7 +47,16 @@
 	</section>
 <!--	/section.select-->
 
+<!--section.results-->
+	<section id="results">
+		
+	</section>
+<!--/section.results-->
+
 <!--hover.css animations by http://ianlunn.github.io/Hover/-->
+
+<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+<script src="/js/app.js"></script>
 
 </body>
 </html>
