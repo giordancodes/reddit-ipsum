@@ -22,9 +22,20 @@ a{
 	color: $light;
 	text-decoration: none;
 	transition: color .6s;
-	&:hover{
+	&:hover, &:focus{
 		color: $blue;
 	}
+}
+
+//hover.css hover.css hover.css hover.css hover.css hover.css hover.css
+
+.hvr-underline-from-left:before{
+	background: $blue;
+	height: 2px;
+}
+
+.ralien, .title, input, label{
+	cursor: pointer;
 }
 
 //typography typography typography typography typography typography
@@ -79,7 +90,7 @@ input{
 	border: none;
 }
 
-input[type=number]{
+input[type=number], button{
 	color: black;
 	width: 4rem;
 	padding: .5rem;
@@ -90,8 +101,13 @@ input[type=number]{
 label{
 	color: $light;
 	margin-left: .5rem;
-	font-size: 1.4rem;
+	font-size: 1.6rem;
 	font-weight: 300;
+	transition: color .5s;
+	letter-spacing: .1rem;
+	&:hover, &:focus{
+		color: $blue;
+	}
 }
 
 input[type=number], label{
@@ -106,6 +122,18 @@ input[type=checkbox] + label{
 input[type=checkbox]:checked + label{
 	color: red;
 	border-color: red;
+}
+
+input[type=radio]:checked + label{
+	color: $blue;
+	border-color: $blue;
+}
+
+button{
+	padding: .5rem;
+	border-radius: .2rem;
+	border: 0;
+	font-size: 1.6rem;
 }
 
 //header header header header header header header header header header
