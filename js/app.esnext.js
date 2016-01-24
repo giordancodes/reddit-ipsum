@@ -3,7 +3,7 @@ let goBtn = $( '#goBtn' ),
 
 let app = {};
 
-app.ipsum = ['dank', 'pepe'];
+app.ipsum = ['dank', 'pepe', 'you are doing that too much', 'reddit', 'ipsum', 'gold', 'downvote', 'cats', 'repost', 'original', 'content', 'subreddit', 'upvote', 'sticky', 'unidan', 'guidelines', 'tl;dr', 'front page', 'post', 'subscribe', 'switcheroo', 'links', 'news', 'reddiquette', 'self', 'gilded'];
 
 app.nsfw = ['Bill O\'Reilly', 'Taco Bell'];
 
@@ -16,9 +16,9 @@ app.displayResults = () => {
 		
 		e.preventDefault();
 		
-		app.generated = app.ipsum[Math.floor(Math.random() * app.nsfw.length)];
+		app.generated = app.ipsum[Math.floor(Math.random() * app.ipsum.length)];
 		
-		console.log(app.generated);
+		results.append(app.generated + ' ');
 		
 	})
 }
