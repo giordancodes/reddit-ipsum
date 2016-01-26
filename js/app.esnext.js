@@ -1,4 +1,5 @@
 let goBtn = $( '#goBtn' ),
+		num = $( '#num' ),
 		results = $( '#results' );
 
 let app = {};
@@ -12,7 +13,8 @@ app.generated = [];
 //function that defines a word
 app.word = (x) => {
 	
-	return app.generated = _.sample(app.ipsum, x);
+	app.generated = _.sample(app.ipsum, x);
+	return app.generated.join(' ');
 
 }
 
@@ -33,7 +35,8 @@ app.displayResults = () => {
 		
 		e.preventDefault();
 		
-		app.generated = app.word(10);
+		app.generated = app.word(num.val());
+		console.log(num.val());
 		
 		results.append(app.generated + ' ');
 		

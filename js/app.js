@@ -1,6 +1,7 @@
 'use strict';
 
 var goBtn = $('#goBtn'),
+    num = $('#num'),
     results = $('#results');
 
 var app = {};
@@ -14,7 +15,8 @@ app.generated = [];
 //function that defines a word
 app.word = function (x) {
 
-	return app.generated = _.sample(app.ipsum, x);
+	app.generated = _.sample(app.ipsum, x);
+	return app.generated.join(' ');
 };
 
 //function that defines a sentence, which is made up of words
@@ -30,7 +32,8 @@ app.displayResults = function () {
 
 		e.preventDefault();
 
-		app.generated = app.word(10);
+		app.generated = app.word(num.val());
+		console.log(num.val());
 
 		results.append(app.generated + ' ');
 	});
