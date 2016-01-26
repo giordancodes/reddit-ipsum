@@ -8,25 +8,36 @@ app.ipsum = ['dank', 'pepe', 'you are doing that too much', 'reddit', 'ipsum', '
 
 app.nsfw = ['Bill O\'Reilly', 'Taco Bell'];
 
+app.single = '';
+
 app.generated = [];
 
 //function that defines a word
 app.word = (x) => {
 	
-	app.generated = _.sample(app.ipsum, x);
-	return app.generated.join(' ');
+	app.single = _.sample(app.ipsum, x);
+	return app.single.join(' ');
 
 }
 
 //function that defines a sentence, which is made up of words
 app.sentence = (y) => {
 	
-	return app.word(Math.floor(Math.random() * (11 - 7)) + 7);
+	let sentenceBuild = '';
+	
+	while (y > 0){
+		sentenceBuild = sentenceBuild + (app.word(Math.floor(Math.random() * (12 - 7)) + 7)) + '.';
+		y --;
+	}
+
+	return sentenceBuild;
 	
 }
 
 //function that defines a paragraph, which is made up of sentences
 app.paragraph = (z) => {
+	
+		return app.sentence(Math.floor(Math.random() * (7 - 3)) + 3);
 	
 }
 
@@ -35,9 +46,17 @@ app.displayResults = () => {
 //	return results from user's input
 	goBtn.click(function( e ){
 		
-		e.preventDefault();
+		e.preventDefault();		
 		
-		app.generated = app.word(num.val());
+//		check which radio option is selected and run appropriate function
+		if ($( 'input:checked' ).val() === 'word'){
+			app.generated = app.word(num.val());
+		} else if ($( 'input:checked' ).val() === 'sentence'){
+			app.generated = app.sentence(num.val());
+		} else {
+			app.generated = app.paragraph(num.val());
+		};
+		
 		
 		results.append(app.generated + ' ');
 		
