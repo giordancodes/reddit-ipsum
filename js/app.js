@@ -20,7 +20,10 @@ app.word = function (x) {
 };
 
 //function that defines a sentence, which is made up of words
-app.sentence = function (y) {};
+app.sentence = function (y) {
+
+	return app.word(Math.floor(Math.random() * (11 - 7)) + 7);
+};
 
 //function that defines a paragraph, which is made up of sentences
 app.paragraph = function (z) {};
@@ -33,7 +36,6 @@ app.displayResults = function () {
 		e.preventDefault();
 
 		app.generated = app.word(num.val());
-		console.log(num.val());
 
 		results.append(app.generated + ' ');
 	});
@@ -43,6 +45,7 @@ app.go = function () {
 	app.displayResults();
 };
 
+//document ready
 $(document).ready(function () {
 
 	app.go();
