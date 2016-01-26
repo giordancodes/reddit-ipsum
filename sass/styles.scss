@@ -6,6 +6,7 @@ $light: #e5eec1;
 $medium: #9EBA99;
 $blue: #3eaca8;
 $grey: #27343A;
+$darkgrey: #333;
 
 html{
 	font-size: 62.5%;
@@ -175,4 +176,20 @@ section.results{
 	font-size: 1.6rem;
 	margin-top: 6rem;
 	font-weight: 400;
+}
+
+//footer footer footer footer footer footer footer footer footer footer
+
+footer{
+	font-size: 1.6rem;
+	background: $darkgrey;
+	text-align: center;
+	padding: .1rem 0;
+	position: fixed;
+	z-index: 9999;
+	bottom: 0;
+	width: 100%;
+	p{
+		color: $light;
+	}
 }
