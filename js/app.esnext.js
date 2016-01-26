@@ -3,11 +3,28 @@ let goBtn = $( '#goBtn' ),
 
 let app = {};
 
-app.ipsum = ['dank', 'pepe', 'you are doing that too much', 'reddit', 'ipsum', 'gold', 'downvote', 'cats', 'repost', 'original', 'content', 'subreddit', 'upvote', 'sticky', 'unidan', 'guidelines', 'tl;dr', 'front page', 'post', 'subscribe', 'switcheroo', 'links', 'news', 'reddiquette', 'self', 'gilded'];
+app.ipsum = ['dank', 'pepe', 'you are doing that too much', 'reddit', 'ipsum', 'gold', 'downvote', 'cats', 'repost', 'original', 'content', 'subreddit', 'upvote', 'sticky', 'unidan', 'guidelines', 'tl;dr', 'front page', 'post', 'subscribe', 'switcheroo', 'links', 'news', 'reddiquette', 'self', 'gilded', 'scumbag'];
 
 app.nsfw = ['Bill O\'Reilly', 'Taco Bell'];
 
 app.generated = [];
+
+//function that defines a word
+app.word = (x) => {
+	
+	return app.generated = _.sample(app.ipsum, x);
+
+}
+
+//function that defines a sentence, which is made up of words
+app.sentence = (y) => {
+	
+}
+
+//function that defines a paragraph, which is made up of sentences
+app.paragraph = (z) => {
+	
+}
 
 app.displayResults = () => {
 	
@@ -16,7 +33,7 @@ app.displayResults = () => {
 		
 		e.preventDefault();
 		
-		app.generated = app.ipsum[Math.floor(Math.random() * app.ipsum.length)];
+		app.generated = app.word(10);
 		
 		results.append(app.generated + ' ');
 		
