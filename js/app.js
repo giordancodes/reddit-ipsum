@@ -6,13 +6,18 @@ var goBtn = $('#goBtn'),
 
 var app = {};
 
-app.ipsum = ['dank', 'pepe', 'you are doing that too much', 'reddit', 'ipsum', 'gold', 'downvote', 'cats', 'repost', 'original', 'content', 'subreddit', 'upvote', 'sticky', 'unidan', 'guidelines', 'tl;dr', 'front page', 'post', 'subscribe', 'switcheroo', 'links', 'news', 'reddiquette', 'self', 'gilded', 'scumbag', 'vega', 'troll', 'OP'];
+app.ipsum = ['dank', 'pepe', 'you are doing that too much', 'reddit', 'ipsum', 'gold', 'downvote', 'cats', 'repost', 'original', 'content', 'subreddit', 'upvote', 'sticky', 'unidan', 'guidelines', 'tl;dr', 'front page', 'post', 'subscribe', 'switcheroo', 'links', 'news', 'reddiquette', 'self', 'gilded', 'scumbag', 'vega', 'troll', 'OP', 'MRW', 'hot', 'new', 'rising', 'wiki', 'kitty', 'sweet', 'pooch', 'nailed', 'TIL', 'aww', 'IRL', 'meme'];
 
 app.nsfw = ['Bill O\'Reilly', 'Taco Bell'];
 
 app.single = '';
 
 app.generated = [];
+
+//function for capitalizing 1st letter in a string
+app.capitalize = function (str) {
+	return str.charAt(0).toUpperCase() + str.slice(1);
+};
 
 //function that defines a word
 app.word = function (x) {
@@ -27,7 +32,7 @@ app.sentence = function (y) {
 	var sentenceBuild = '';
 
 	while (y > 0) {
-		sentenceBuild = sentenceBuild + app.word(Math.floor(Math.random() * (12 - 7)) + 7).capitalize() + '. ';
+		sentenceBuild = sentenceBuild + app.capitalize(app.word(Math.floor(Math.random() * (12 - 7)) + 7)) + '. ';
 		y--;
 	}
 
