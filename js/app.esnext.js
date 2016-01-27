@@ -4,9 +4,9 @@ let goBtn = $( '#goBtn' ),
 
 let app = {};
 
-app.ipsum = ['dank', 'pepe', 'you are doing that too much', 'reddit', 'ipsum', 'gold', 'downvote', 'cats', 'repost', 'original', 'content', 'subreddit', 'upvote', 'sticky', 'unidan', 'guidelines', 'tl;dr', 'front page', 'post', 'subscribe', 'switcheroo', 'links', 'news', 'reddiquette', 'self', 'gilded', 'scumbag', 'vega', 'troll', 'OP', 'MRW', 'hot', 'new', 'rising', 'wiki', 'kitty', 'sweet', 'pooch', 'nailed', 'TIL', 'aww', 'IRL', 'meme'];
+app.ipsum = ['dank', 'pepe', 'you are doing that too much', 'reddit', 'ipsum', 'gold', 'downvote', 'cats', 'repost', 'original', 'content', 'subreddit', 'upvote', 'sticky', 'unidan', 'guidelines', 'TL;DR', 'front page', 'post', 'subscribe', 'switcheroo', 'links', 'news', 'reddiquette', 'self', 'gilded', 'scumbag', 'vega', 'troll', 'OP', 'MRW', 'hot', 'new', 'rising', 'wiki', 'kitty', 'sweet', 'pooch', 'nailed', 'TIL', 'aww', 'IRL', 'meme', 'internets', 'karma', 'n64', 'bacon', 'Bernie Sanders', 'sanic'];
 
-app.nsfw = ['Bill O\'Reilly', 'Taco Bell'];
+app.nsfw = ['Bill O\'Reilly', 'Taco Bell', 'shitpost', 'gonewild'];
 
 app.single = '';
 
@@ -22,7 +22,6 @@ app.word = (x) => {
 	
 	app.single = _.sample(app.ipsum, x);
 	return app.single.join(' ');
-
 }
 
 //function that defines a sentence, which is made up of 7-12 words
@@ -36,7 +35,6 @@ app.sentence = (y) => {
 	}
 
 	return sentenceBuild;
-	
 }
 
 //function that defines a paragraph, which is made up of 3-9 sentences
@@ -50,7 +48,6 @@ app.paragraph = (z) => {
 	}
 	
 	return paragraphBuild;
-	
 }
 
 app.displayResults = () => {
@@ -75,19 +72,18 @@ app.displayResults = () => {
 			app.generated = app.paragraph(num.val());
 		};
 		
-		results.html(app.generated + ' ');
+		results.html(`<pre>${app.generated}</pre>`);
 		
 	})
 }
 
-
+//one function to run at page load
 app.go = function(){
+	$( 'a' ).smoothScroll();
 	app.displayResults();
 }
 
 //document ready
 $(document).ready(function() {
-	
 		app.go();
-	
 });

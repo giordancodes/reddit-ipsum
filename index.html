@@ -25,14 +25,16 @@
 
 	<meta charset="UTF-8">
 	<title>reddit ipsum</title>
-	<meta name="description" content="">
-	<meta name="keywords" content="">
+	<meta name="description" content="welcome to the first reddit-inspired lorem ipsum filler text generator. made with love and memes <3">
+	<meta name="keywords" content="lorem ipsum, filler, text, generator, internet, meme, alien, IRL">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 	<link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,300italic,300,100' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.0.2/css/hover-min.css">
 	<link rel="stylesheet" href="styles.css">
 	
 </head>
+
 <body>
 
 <!--header-->
@@ -43,27 +45,36 @@
 				<h2 class="hvr-underline-from-left">dank filler text</h2>
 			</div>
 			<div class="ralien hvr-sink">
-				<img src="assets/reddit-beige.svg" alt="reddit alien skull">
+				<img src="assets/reddit-web.png" alt="reddit alien skull">
+				<div id="down"><a class="fa fa-angle-double-down hvr-wobble-vertical" href="#select"></a></div>
 			</div>
 		</div>
 	</header>
 <!--	/header-->
 	
 <!--	section.select-->
-	<section class="select">
+	<section class="select" id="select">
 		<div class="options wrapper">
 		
 			<form class="flex">
 			
-				<input type="number" value="1" id="num">
-				<input type="radio" name="length" value="word" id="words" label="words" checked>
-				<label for="words">words</label>
-				<input type="radio" name="length" value="sentence" id="sentences" label="sentences">
-				<label for="sentences">sentences</label>
-				<input type="radio" name="length" value="paragraph" id="paragraphs" label="paragraphs">
-				<label for="paragraphs">paragraphs</label>
-				<input type="checkbox" value="nsfw" id="nsfw">
-				<label for="nsfw">NSFW</label>
+				<input type="number" value="1" id="num" action="submit">
+				<div>
+					<input type="radio" name="length" value="word" id="words" label="words" checked>
+					<label for="words">words</label>
+				</div>
+				<div>
+					<input type="radio" name="length" value="sentence" id="sentences" label="sentences">
+					<label for="sentences">sentences</label>
+				</div>
+				<div>
+					<input type="radio" name="length" value="paragraph" id="paragraphs" label="paragraphs">
+					<label for="paragraphs">paragraphs</label>
+				</div>
+				<div>
+					<input type="checkbox" value="nsfw" id="nsfw">
+					<label for="nsfw">NSFW</label>
+				</div>
 				
 				<div class="button">
 					<button action="submit" id="goBtn">> generate <</button>
@@ -77,7 +88,7 @@
 
 <!--section.results-->
 	<section id="results" class="results wrapper">
-		<p></p>
+		
 	</section>
 <!--/section.results-->
 
@@ -92,6 +103,7 @@
 <!--all code is copyright 2016 and later © Giordan Battaglin-->
 
 <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+<script src="/js/jquery.smooth-scroll.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="/js/app.js"></script>
 

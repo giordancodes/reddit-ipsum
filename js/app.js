@@ -6,9 +6,9 @@ var goBtn = $('#goBtn'),
 
 var app = {};
 
-app.ipsum = ['dank', 'pepe', 'you are doing that too much', 'reddit', 'ipsum', 'gold', 'downvote', 'cats', 'repost', 'original', 'content', 'subreddit', 'upvote', 'sticky', 'unidan', 'guidelines', 'tl;dr', 'front page', 'post', 'subscribe', 'switcheroo', 'links', 'news', 'reddiquette', 'self', 'gilded', 'scumbag', 'vega', 'troll', 'OP', 'MRW', 'hot', 'new', 'rising', 'wiki', 'kitty', 'sweet', 'pooch', 'nailed', 'TIL', 'aww', 'IRL', 'meme'];
+app.ipsum = ['dank', 'pepe', 'you are doing that too much', 'reddit', 'ipsum', 'gold', 'downvote', 'cats', 'repost', 'original', 'content', 'subreddit', 'upvote', 'sticky', 'unidan', 'guidelines', 'TL;DR', 'front page', 'post', 'subscribe', 'switcheroo', 'links', 'news', 'reddiquette', 'self', 'gilded', 'scumbag', 'vega', 'troll', 'OP', 'MRW', 'hot', 'new', 'rising', 'wiki', 'kitty', 'sweet', 'pooch', 'nailed', 'TIL', 'aww', 'IRL', 'meme', 'internets', 'karma', 'n64', 'bacon', 'Bernie Sanders', 'sanic'];
 
-app.nsfw = ['Bill O\'Reilly', 'Taco Bell'];
+app.nsfw = ['Bill O\'Reilly', 'Taco Bell', 'shitpost', 'gonewild'];
 
 app.single = '';
 
@@ -74,16 +74,17 @@ app.displayResults = function () {
 			app.generated = app.paragraph(num.val());
 		};
 
-		results.html(app.generated + ' ');
+		results.html('<pre>' + app.generated + '</pre>');
 	});
 };
 
+//one function to run at page load
 app.go = function () {
+	$('a').smoothScroll();
 	app.displayResults();
 };
 
 //document ready
 $(document).ready(function () {
-
 	app.go();
 });

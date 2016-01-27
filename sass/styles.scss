@@ -7,6 +7,7 @@ $medium: #9EBA99;
 $blue: #3eaca8;
 $grey: #27343A;
 $darkgrey: #333;
+$red: #FA4100;
 
 html{
 	font-size: 62.5%;
@@ -72,12 +73,6 @@ h2{
 .flex{
 	display: flex;
 	flex-wrap: wrap;
-}
-
-.ralien{
-	img{
-		height: 80px;
-	}
 }
 
 section{
@@ -157,6 +152,20 @@ header{
 	}
 }
 
+.ralien{
+	img{
+		height: 80px;
+	}
+}
+
+#down{
+	font-size: 5rem;
+	text-align: center;
+	a{
+		color: $red;
+	}
+}
+
 //section.select section.select section.select section.select
 
 section.select{
@@ -193,5 +202,33 @@ footer{
 	width: 100%;
 	p{
 		color: $light;
+	}
+}
+
+//media queries media queries media queries media queries media queries
+
+@media all and (max-width: 628px) {
+	header {
+		margin-bottom: 3rem;
+		.wrapper {
+			flex-direction: column;
+			align-items: flex-start;
+			.ralien{
+				padding-top: 3rem;
+			}
+		}
+	}
+}
+
+@media all and (max-width: 628px) and (max-height: 640px) {
+	header {
+		height: 100vh;
+	}
+	section.select .options form {
+		align-items: flex-start;
+		flex-direction: column;
+		&>*{
+			margin-bottom: 1rem;
+		}
 	}
 }
