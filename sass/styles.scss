@@ -190,6 +190,7 @@ section.select{
 	.math{
 		font-size: 2rem;
 		color: $medium;
+		margin: 0 .6rem;
 	}
 	.quantity{
 		margin-bottom: 2rem;
@@ -216,7 +217,7 @@ section.copyAll{
 	border-radius: 1rem;
 	background: rgba(0,0,0,0.6);
 	right: 0;
-	top: 50%;
+	top: calc(50% - 3rem);
 	z-index: 999;
 	#copyAll {
 		color: $light;
@@ -241,6 +242,9 @@ footer{
 	width: 100%;
 	p{
 		color: $light;
+	}
+	a:hover, a:focus{
+		color: $red;
 	}
 }
 
