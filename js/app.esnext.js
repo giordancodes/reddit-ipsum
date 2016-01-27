@@ -26,7 +26,7 @@ app.sentence = (y) => {
 	let sentenceBuild = '';
 	
 	while (y > 0){
-		sentenceBuild = sentenceBuild + (app.word(Math.floor(Math.random() * (12 - 7)) + 7)) + '. ';
+		sentenceBuild = sentenceBuild + (app.word(Math.floor(Math.random() * (12 - 7)) + 7)).capitalize() + '. ';
 		y --;
 	}
 
@@ -34,13 +34,13 @@ app.sentence = (y) => {
 	
 }
 
-//function that defines a paragraph, which is made up of 3-7 sentences
+//function that defines a paragraph, which is made up of 3-9 sentences
 app.paragraph = (z) => {
 	
 	let paragraphBuild = '';
 	
 	while (z > 0){
-		paragraphBuild = paragraphBuild + '<p>' + (app.sentence(Math.floor(Math.random() * (7 - 3)) + 3)) + '</p>';
+		paragraphBuild = paragraphBuild + '<p>' + (app.sentence(Math.floor(Math.random() * (9 - 3)) + 3)) + '</p>';
 		z --;
 	}
 	
