@@ -44,7 +44,7 @@
 				<h1><a href="index.html">reddit ipsum</a></h1>
 				<h2 class="hvr-underline-from-left">dank filler text</h2>
 			</div>
-			<div class="ralien hvr-sink">
+			<div class="ralien">
 				<img src="assets/reddit-web.png" alt="reddit alien skull">
 				<div id="down"><a class="fa fa-angle-double-down hvr-wobble-vertical" href="#select"></a></div>
 			</div>
@@ -58,7 +58,11 @@
 		
 			<form class="flex">
 			
-				<input type="number" value="1" id="num" action="submit">
+				<div class="quantity">
+					<input type="number" value="1" id="num" action="submit">
+					<button class="fa fa-plus-circle math" id="plus" value="plus"></button>
+					<button class="fa fa-minus-circle math" id="minus" value="minus"></button>
+				</div>
 				<div>
 					<input type="radio" name="length" value="word" id="words" label="words" checked>
 					<label for="words">words</label>
@@ -77,7 +81,7 @@
 				</div>
 				
 				<div class="button">
-					<button action="submit" id="goBtn">> generate <</button>
+					<button action="submit" id="goBtn">generate</button>
 				</div>
 				
 			</form>
@@ -85,6 +89,12 @@
 		</div>
 	</section>
 <!--	/section.select-->
+
+<!--section.copyAll-->
+<section class="copyAll hidden">
+	<button id="copyAll" class="fa fa-clone" data-clipboard-action="copy" data-clipboard-target="#results"></button>
+</section>
+<!--/section.copyAll-->
 
 <!--section.results-->
 	<section id="results" class="results wrapper">
@@ -100,10 +110,12 @@
 
 <!--underscorejs library from http://underscorejs.org-->
 <!--hover.css animations by http://ianlunn.github.io/Hover-->
+<!--copy all text without flash thanks to https://clipboardjs.com-->
 <!--all code is copyright 2016 and later © Giordan Battaglin-->
 
 <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
 <script src="/js/jquery.smooth-scroll.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.5/clipboard.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="/js/app.js"></script>
 

@@ -1,5 +1,8 @@
 let goBtn = $( '#goBtn' ),
 		num = $( '#num' ),
+		minus = $( '#minus' ),
+		plus = $( '#plus' ),
+		copyAll = $( 'section.copyAll' ),
 		results = $( '#results' );
 
 let app = {};
@@ -50,15 +53,37 @@ app.paragraph = (z) => {
 	return paragraphBuild;
 }
 
+//plus and minus button increment number input
+app.math = () => {
+	
+	
+	minus.click(function( e ){
+//		button click wont reload page
+		e.preventDefault();
+		
+	let current = num.val();
+		num.val(current -1);
+	});
+	
+	plus.click(function( e ){
+//		button click wont reload page
+		e.preventDefault();
+		
+	let cur = num.val();
+		num.val(parseInt(cur) + 1);
+	});
+	
+}
+
 app.displayResults = () => {
 	
 //	return results from user's input
 	goBtn.click(function( e ){
 		
+//		button click wont reload page
 		e.preventDefault();		
 		
 //		make sure num is > 0
-		
 		if (num.val() < 1){
 			alert('Only positive numbers will be successful.')
 		}
@@ -72,15 +97,25 @@ app.displayResults = () => {
 			app.generated = app.paragraph(num.val());
 		};
 		
+//		display results
 		results.html(`<pre>${app.generated}</pre>`);
 		
+//		scroll to results
+		$( '#results' ).focus();
+		$( 'body,html' ).animate({scrollTop: $( '#results' ).offset().top});
+		copyAll.removeClass('hidden');
+
 	})
+
 }
 
 //one function to run at page load
 app.go = function(){
+	app.math();
 	$( 'a' ).smoothScroll();
+	$( '#' ).smoothScroll();
 	app.displayResults();
+	new Clipboard('#copyAll');
 }
 
 //document ready

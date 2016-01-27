@@ -36,7 +36,7 @@ a{
 	height: 2px;
 }
 
-.ralien, .title, input, label{
+.title, input, label{
 	cursor: pointer;
 }
 
@@ -68,6 +68,10 @@ h2{
 	max-width: 960px;
 	margin: 0 auto;
 	padding: 0 2rem;
+}
+
+.hidden{
+	display: none;
 }
 
 .flex{
@@ -109,7 +113,7 @@ label{
 	}
 }
 
-input[type=number], label{
+label{
 	margin-right: 1.5rem;	
 }
 
@@ -131,13 +135,19 @@ input[type=radio]:checked + label{
 button{
 	padding: .5rem 0;
 	border: 0;
-	font-size: 2.6rem;
+	font-size: 2rem;
 	font-weight: 300;
 	background: none;
 	color: $light;
-	transition: color .6s;
+	transition: color .6s, background .6s;
+}
+
+#goBtn{
+	border: solid 2px $light;
+	padding: 1rem 1rem 1.3rem;
 	&:hover, &:focus{
-		color: $blue;
+		color: $darkgrey;
+		background: $red;
 	}
 }
 
@@ -164,6 +174,7 @@ header{
 	a{
 		color: $red;
 	}
+	display: none;
 }
 
 //section.select section.select section.select section.select
@@ -173,8 +184,16 @@ section.select{
 		align-items: center;
 		.button{
 			width: 100%;
-			margin: 1rem 0;
+			margin: 2rem 0;
 		}
+	}
+	.math{
+		font-size: 2rem;
+		color: $medium;
+	}
+	.quantity{
+		margin-bottom: 2rem;
+		flex: 1 0 100%;
 	}
 }
 
@@ -187,6 +206,26 @@ section.results{
 	font-weight: 400;
 	padding-bottom: 10rem;
 	line-height: 2.6rem;
+}
+
+//section.copyAll section.copyAll section.copyAll section.copyAll
+
+section.copyAll{
+	position: fixed;
+	padding: 1.4rem;
+	border-radius: 1rem;
+	background: rgba(0,0,0,0.6);
+	right: 0;
+	top: 50%;
+	z-index: 999;
+	#copyAll {
+		color: $light;
+		font-size: 4rem;
+		transition: color .6s;
+		&:hover, &:focus{
+			color: $red;
+		}
+	}
 }
 
 //footer footer footer footer footer footer footer footer footer footer
@@ -224,11 +263,19 @@ footer{
 	header {
 		height: 100vh;
 	}
+	#down{
+		display: block;
+	}
 	section.select .options form {
 		align-items: flex-start;
 		flex-direction: column;
 		&>*{
 			margin-bottom: 1rem;
+		}
+	}
+	section.copyAll{
+		#copyAll {
+			font-size: 2.4rem;
 		}
 	}
 }
