@@ -9,7 +9,7 @@ var goBtn = $('#goBtn'),
 
 var app = {};
 
-app.ipsum = ['dank', 'pepe', 'you are doing that too much', 'reddit', 'ipsum', 'gold', 'downvote', 'cats', 'repost', 'original', 'content', 'subreddit', 'upvote', 'sticky', 'unidan', 'guidelines', 'TL;DR', 'front page', 'post', 'subscribe', 'switcheroo', 'links', 'news', 'reddiquette', 'self', 'gilded', 'scumbag', 'vega', 'troll', 'OP', 'MRW', 'hot', 'new', 'rising', 'wiki', 'kitty', 'sweet', 'pooch', 'nailed', 'TIL', 'aww', 'IRL', 'meme', 'internets', 'karma', 'n64', 'bacon', 'Bernie Sanders', 'sanic', 'DAE', 'drone', 'procrastination', 'nsfw', 'aliens', 'Nic Cage', 'Wonka', 'Putin', 'Obama', 'Morpheus', 'Yao', 'ermahgerd', 'srsly', 'win', 'lose', 'Milhouse', 'Zoidberg', 'rage', 'wat', 'legit'];
+app.ipsum = ['dank', 'pepe', 'you are doing that too much', 'reddit', 'ipsum', 'gold', 'downvote', 'cats', 'repost', 'original', 'content', 'subreddit', 'upvote', 'sticky', 'unidan', 'guidelines', 'TL;DR', 'front page', 'post', 'subscribe', 'switcheroo', 'links', 'news', 'reddiquette', 'self', 'gilded', 'scumbag', 'vega', 'troll', 'OP', 'MRW', 'hot', 'new', 'rising', 'wiki', 'kitty', 'sweet', 'pooch', 'nailed', 'TIL', 'aww', 'IRL', 'meme', 'internets', 'karma', 'n64', 'bacon', 'Bernie Sanders', 'sanic', 'DAE', 'drone', 'procrastination', 'nsfw', 'aliens', 'Nic Cage', 'Wonka', 'Putin', 'Obama', 'Morpheus', 'Yao', 'ermahgerd', 'srsly', 'win', 'lose', 'Milhouse', 'Zoidberg', 'rage', 'wat', 'legit', 'narwhal', 'Carl Sagan', 'Patrick Stewart'];
 
 app.nsfw = ['Bill O\'Reilly', 'Taco Bell', 'shitpost', 'gonewild', 'circlejerk'];
 

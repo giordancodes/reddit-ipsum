@@ -207,6 +207,7 @@ section.results{
 	font-weight: 400;
 	padding-bottom: 10rem;
 	line-height: 2.6rem;
+	font-family: $roboto;
 }
 
 //section.copyAll section.copyAll section.copyAll section.copyAll
@@ -240,11 +241,20 @@ footer{
 	z-index: 9999;
 	bottom: 0;
 	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
 	p{
 		color: $light;
 	}
 	a:hover, a:focus{
 		color: $red;
+	}
+	.fa-twitter {
+		color: #4099FF;
+		font-size: 2.2rem;
+		margin-left: 2rem;
 	}
 }
 
