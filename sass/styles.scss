@@ -184,7 +184,7 @@ section.select{
 		align-items: center;
 		.button{
 			width: 100%;
-			margin: 2rem 0;
+			margin: 2.8rem 0;
 		}
 	}
 	.math{
@@ -194,7 +194,8 @@ section.select{
 	}
 	.quantity{
 		margin-bottom: 2rem;
-		flex: 1 0 100%;
+//		flex: 1 0 100%;
+		width: 100%;
 	}
 }
 
@@ -216,7 +217,7 @@ section.copyAll{
 	position: fixed;
 	padding: 1.4rem;
 	border-radius: 1rem;
-	background: rgba(0,0,0,0.6);
+	background: rgba(0,0,0,0.3);
 	right: 0;
 	top: calc(50% - 3rem);
 	z-index: 999;
