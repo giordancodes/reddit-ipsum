@@ -9,9 +9,9 @@ var goBtn = $('#goBtn'),
 
 var app = {};
 
-app.ipsum = ['dank', 'pepe', 'you are doing that too much', 'reddit', 'ipsum', 'gold', 'downvote', 'cats', 'repost', 'original', 'content', 'subreddit', 'upvote', 'sticky', 'unidan', 'guidelines', 'TL;DR', 'front page', 'post', 'subscribe', 'switcheroo', 'links', 'news', 'reddiquette', 'self', 'gilded', 'scumbag', 'vega', 'troll', 'OP', 'MRW', 'hot', 'new', 'rising', 'wiki', 'kitty', 'sweet', 'pooch', 'nailed', 'TIL', 'aww', 'IRL', 'meme', 'internets', 'karma', 'n64', 'bacon', 'Bernie Sanders', 'sanic', 'DAE', 'drone', 'procrastination', 'nsfw', 'aliens', 'Nic Cage', 'Wonka', 'Putin', 'Obama', 'Morpheus', 'Yao', 'ermahgerd', 'srsly', 'win', 'lose', 'Milhouse', 'Zoidberg', 'rage', 'wat', 'legit', 'narwhal', 'Carl Sagan', 'Patrick Stewart', 'robot', 'nanobot'];
+app.ipsum = ['dank', 'pepe', 'you are doing that too much', 'reddit', 'ipsum', 'gold', 'downvote', 'cats', 'repost', 'original', 'content', 'subreddit', 'upvote', 'sticky', 'unidan', 'guidelines', 'TL;DR', 'front page', 'post', 'subscribe', 'switcheroo', 'links', 'news', 'reddiquette', 'self', 'gilded', 'scumbag', 'vega', 'troll', 'OP', 'MRW', 'hot', 'new', 'rising', 'wiki', 'kitty', 'sweet', 'pooch', 'nailed', 'TIL', 'aww', 'IRL', 'meme', 'internets', 'karma', 'n64', 'bacon', 'Bernie Sanders', 'sanic', 'DAE', 'drone', 'procrastination', 'nsfw', 'aliens', 'Nic Cage', 'Wonka', 'Putin', 'Obama', 'Morpheus', 'Yao', 'ermahgerd', 'srsly', 'win', 'lose', 'Milhouse', 'Zoidberg', 'rage', 'wat', 'legit', 'narwhal', 'Carl Sagan', 'Patrick Stewart', 'robot', 'nanobot', 'unexpected', 'bestof', 'conspiracy', 'gif', 'fallout', 'haiku', 'facepalm', 'neckbeard', 'skyrim', 'the batman'];
 
-app.nsfw = ['Bill O\'Reilly', 'Taco Bell', 'shitpost', 'gonewild', 'circlejerk'];
+app.nsfw = ['Bill O\'Reilly', 'Taco Bell', 'shitpost', 'gonewild', 'circlejerk', 'kek', 'cuck', 'rule34', 'politics', 'TIFU', 'fap', 'atheism', 'cringe', 'gentlemanboners', 'butthurt', 'busty', 'creepy', '4chan', 'stupid sexy Flanders', 'manga', 'ladyboners', 'amateur', 'asstastic', 'cosplay', 'hentai', 'furry', 'thick', 'fffffffuuuuuuuuuuuu'];
 
 app.single = '';
 
@@ -22,6 +22,15 @@ app.capitalize = function (str) {
 	return str.charAt(0).toUpperCase() + str.slice(1);
 };
 
+//function defining a word that uses both nsfw and safe options
+app.wordIncNsfw = function (v) {
+
+	var nsfwArray = _.union(app.nsfw, app.ipsum);
+
+	app.nsfwWord = _.sample(nsfwArray, v);
+	return app.nsfwWord.join(' ');
+};
+
 //function that defines a word
 app.word = function (x) {
 
@@ -30,26 +39,40 @@ app.word = function (x) {
 };
 
 //function that defines a sentence, which is made up of 7-12 words
-app.sentence = function (y) {
+app.sentence = function (y, yWord) {
 
 	var sentenceBuild = '';
 
-	while (y > 0) {
-		sentenceBuild = sentenceBuild + app.capitalize(app.word(Math.floor(Math.random() * (12 - 7)) + 7)) + '. ';
-		y--;
+	if (yWord === 'nsfw') {
+		while (y > 0) {
+			sentenceBuild = sentenceBuild + app.capitalize(app.wordIncNsfw(Math.floor(Math.random() * (12 - 7)) + 7)) + '. ';
+			y--;
+		}
+	} else {
+		while (y > 0) {
+			sentenceBuild = sentenceBuild + app.capitalize(app.word(Math.floor(Math.random() * (12 - 7)) + 7)) + '. ';
+			y--;
+		}
 	}
 
 	return sentenceBuild;
 };
 
 //function that defines a paragraph, which is made up of 3-9 sentences
-app.paragraph = function (z) {
+app.paragraph = function (z, zWord) {
 
 	var paragraphBuild = '';
 
-	while (z > 0) {
-		paragraphBuild = paragraphBuild + '<p>' + app.sentence(Math.floor(Math.random() * (9 - 3)) + 3) + '</p>';
-		z--;
+	if (zWord === 'nsfw') {
+		while (z > 0) {
+			paragraphBuild = paragraphBuild + '<p>' + (app.sentence(Math.floor(Math.random() * (9 - 3)) + 3), 'nsfw') + '</p>';
+			z--;
+		}
+	} else {
+		while (z > 0) {
+			paragraphBuild = paragraphBuild + '<p>' + app.sentence(Math.floor(Math.random() * (9 - 3)) + 3) + '</p>';
+			z--;
+		}
 	}
 
 	return paragraphBuild;
@@ -75,6 +98,7 @@ app.math = function () {
 	});
 };
 
+//displayResults function
 app.displayResults = function () {
 
 	//	return results from user's input
@@ -90,11 +114,31 @@ app.displayResults = function () {
 
 		//		check which radio option is selected and run appropriate function
 		if ($('input:checked').val() === 'word') {
-			app.generated = app.word(num.val());
+
+			//		check to see if nsfw words will be added to word selection
+			if ($('#nsfw').prop('checked') === true) {
+				app.generated = app.wordIncNsfw(num.val());
+			} else {
+				//		run clean selection if else
+				app.generated = app.word(num.val());
+			}
 		} else if ($('input:checked').val() === 'sentence') {
-			app.generated = app.sentence(num.val());
+
+			//		check to see if nsfw words will be added to word selection
+			if ($('#nsfw').prop('checked') === true) {
+				app.generated = app.sentence(num.val(), 'nsfw');
+			} else {
+				//		run clean selection if else
+				app.generated = app.sentence(num.val());
+			}
 		} else {
-			app.generated = app.paragraph(num.val());
+			//		check to see if nsfw words will be added to word selection
+			if ($('#nsfw').prop('checked') === true) {
+				app.generated = app.paragraph(num.val(), 'nsfw');
+			} else {
+				//		run clean selection if else
+				app.generated = app.paragraph(num.val());
+			}
 		};
 
 		//		display results
