@@ -9,7 +9,7 @@ var goBtn = $('#goBtn'),
 
 var app = {};
 
-app.ipsum = ['dank', 'pepe', 'you are doing that too much', 'reddit', 'ipsum', 'gold', 'downvote', 'cats', 'repost', 'original', 'content', 'subreddit', 'upvote', 'sticky', 'unidan', 'guidelines', 'TL;DR', 'front page', 'post', 'subscribe', 'switcheroo', 'links', 'news', 'reddiquette', 'self', 'gilded', 'vega', 'troll', 'OP', 'MRW', 'hot', 'new', 'rising', 'wiki', 'kitty', 'sweet', 'pooch', 'nailed', 'TIL', 'aww', 'IRL', 'meme', 'internets', 'karma', 'n64', 'bacon', 'Bernie Sanders', 'sanic', 'DAE', 'drone', 'nsfw', 'aliens', 'Nic Cage', 'Wonka', 'Putin', 'Obama', 'Morpheus', 'Yao', 'ermahgerd', 'srsly', 'win', 'lose', 'Milhouse', 'Zoidberg', 'rage', 'wat', 'legit', 'narwhal', 'Carl Sagan', 'Patrick Stewart', 'robot', 'nanobot', 'unexpected', 'bestof', 'conspiracy', 'gif', 'fallout', 'haiku', 'facepalm', 'neckbeard', 'skyrim', 'the batman'];
+app.ipsum = ['dank', 'pepe', 'you are doing that too much', 'reddit', 'ipsum', 'gold', 'downvote', 'cats', 'repost', 'original', 'content', 'subreddit', 'upvote', 'sticky', 'unidan', 'guidelines', 'TL;DR', 'front page', 'post', 'subscribe', 'switcheroo', 'links', 'news', 'reddiquette', 'self', 'gilded', 'vega', 'troll', 'OP', 'MRW', 'hot', 'new', 'rising', 'wiki', 'kitty', 'sweet', 'pooch', 'nailed', 'TIL', 'aww', 'IRL', 'meme', 'internets', 'karma', 'n64', 'bacon', 'Bernie Sanders', 'sanic', 'DAE', 'drone', 'nsfw', 'aliens', 'Nic Cage', 'Wonka', 'Putin', 'Obama', 'Morpheus', 'Yao', 'ermahgerd', 'srsly', 'win', 'lose', 'Milhouse', 'Zoidberg', 'rage', 'wat', 'legit', 'narwhal', 'Carl Sagan', 'Patrick Stewart', 'robot', 'nanobot', 'unexpected', 'bestof', 'conspiracy', 'gif', 'fallout', 'haiku', 'facepalm', 'neckbeard', 'skyrim', 'the batman', 'actually', 'it\'s', 'about', 'ethics', 'in-game', 'journalism'];
 
 app.nsfw = ['Bill O\'Reilly', 'Donald Trump', 'Taco Bell', 'shitpost', 'gonewild', 'circlejerk', 'kek', 'cuck', 'rule34', 'politics', 'TIFU', 'fap', 'atheism', 'cringe', 'gentlemanboners', 'butthurt', 'busty', 'creepy', '4chan', 'stupid sexy Flanders', 'manga', 'ladyboners', 'amateur', 'asstastic', 'cosplay', 'hentai', 'furry', 'scumbag', 'thick'];
 
@@ -147,7 +147,11 @@ app.displayResults = function () {
 		//		scroll to results
 		$('#results').focus();
 		$('body,html').animate({ scrollTop: $('#results').offset().top });
-		copyAll.removeClass('hidden');
+
+		//		clipboardjs is not fully supported by ios, so keep copy button hidden if true
+		if (is.not.ios() === true) {
+			copyAll.removeClass('hidden');
+		};
 	});
 };
 
