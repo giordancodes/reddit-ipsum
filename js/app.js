@@ -65,7 +65,7 @@ app.paragraph = function (z, zWord) {
 
 	if (zWord === 'nsfw') {
 		while (z > 0) {
-			paragraphBuild = paragraphBuild + '<p>' + (app.sentence(Math.floor(Math.random() * (9 - 3)) + 3), 'nsfw') + '</p>';
+			paragraphBuild = paragraphBuild + '<p>' + app.sentence(Math.floor(Math.random() * (9 - 3)) + 3, 'nsfw') + '</p>';
 			z--;
 		}
 	} else {
