@@ -182,6 +182,9 @@ header{
 section.select{
 	.options form{
 		align-items: center;
+		.radio{
+			margin-bottom: 1.4rem;
+		}
 		.button{
 			width: 100%;
 			margin: 2.8rem 0;
